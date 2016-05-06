@@ -28,6 +28,11 @@
 			<version>6.9.8</version>
 		</dependency>
 		<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>htmlunit-driver</artifactId>
+    <version>2.20</version>
+</dependency>
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>2.53.0</version>
@@ -54,10 +59,13 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
+	<resources>
+    		<resource>
+       		<directory>src/test/resources</directory>
+    		</resource>
+		<resource>
+		<directory>src/main/resources</directory>
+		<filtering>true</filtering>
 			</resource>
 		</resources>
 		<plugins>
@@ -71,10 +79,10 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
+				<version>2.19</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+				<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
